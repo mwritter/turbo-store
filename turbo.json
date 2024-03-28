@@ -1,17 +1,33 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "NEXT_PUBLIC_SANITY_API_VERSION",
+    "NEXT_PUBLIC_SANITY_DATASET",
+    "NEXT_PUBLIC_SANITY_PROJECT_ID",
+    "NEXT_PUBLIC_SANITY_USE_CDN",
+    "NEXT_PUBLIC_CL_CLIENT_ID",
+    "NEXT_PUBLIC_CL_MARKET_ID",
+    "SANITY_API_TOKEN",
+    "SANITY_API_VERSION",
+    "SANITY_DATASET",
+    "SANITY_PROJECT_ID",
+    "SANITY_USE_CDN",
+    "SANITY_WEBHOOK_SECRET"
+  ],
   "globalDependencies": ["**/.env.*local"],
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**"],
+      "dotEnv": [".env.local", ".env"]
     },
     "lint": {
       "dependsOn": ["^lint"]
     },
     "dev": {
       "cache": false,
-      "persistent": true
+      "persistent": true,
+      "dotEnv": [".env.local", ".env"]
     }
   }
 }
