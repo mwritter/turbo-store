@@ -34,6 +34,7 @@ export async function POST(request: NextRequest) {
 
   // Parse out the body for us to work with.
   const delta = webhookPayloadSchema.parse(JSON.parse(body));
+  console.log("The delta is: ", delta);
 
   // Use 'delta' to find the tags that actually need to be updated
   // For all operations, try to invalidate based on type. Better safe than sorry here.
