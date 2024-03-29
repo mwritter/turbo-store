@@ -1,8 +1,6 @@
-import { CommerceLayer } from "@commercelayer/react-components";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { getAuthToken } from "../commerce/server";
 
 const inter = Inter({ subsets: ["latin"] });
 

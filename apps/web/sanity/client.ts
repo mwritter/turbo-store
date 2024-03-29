@@ -15,6 +15,8 @@ export const getAllProductsFromSanity = async (): Promise<Product[]> => {
     title,
     sku,
     mainImage { asset-> }
-  }`
+  }`,
+    {},
+    { next: { tags: ["product"] } }
   );
 };
