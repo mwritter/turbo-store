@@ -10,9 +10,11 @@ export const client = createClient({
 });
 
 export const getAllProductsFromSanity = async (): Promise<Product[]> => {
-  return await client.fetch(groq`*[_type == "product"] {
+  return await client.fetch(
+    groq`*[_type == "product"] {
     title,
     sku,
     mainImage { asset-> }
-  }`);
+  }`
+  );
 };
